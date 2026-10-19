@@ -63,4 +63,4 @@ It reports request success rate, whether each answer includes the expected produ
 
 For a container service such as App Runner or ECS, run `uvicorn api:app --host 0.0.0.0 --port 8000` and grant the task role Bedrock model access, `bedrock:Retrieve` on the Knowledge Base, and permission to invoke the order and tracking Lambdas. Keep AWS credentials in the runtime role, not in the frontend.
 
-The root Dockerfile remains the existing LangGraph Lambda image (`graph.lambda_handler`) for deployments that invoke the agent directly. The FastAPI app is intended to run as a separate service.
+The root Dockerfile runs the FastAPI app and can be used for Render web services. To deploy the agent directly as an AWS Lambda container, use `Dockerfile.lambda`.

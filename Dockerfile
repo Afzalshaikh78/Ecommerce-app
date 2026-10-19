@@ -1,18 +1,12 @@
 
-FROM public.ecr.aws/lambda/python:3.12
+FROM python:3.12-slim
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+WORKDIR /app
 
-WORKDIR ${LAMBDA_TASK_ROOT}
+COPY pyproject.toml uv.lock README.md ./
+RUN uv sync --locked --no-dev
 
-COPY pyproject.toml uv.lock ./
+COPY api.py graph.py ui ./
 
-RUN uv export --frozen --no-dev --no-emit-project \
-    --format requirements-txt -o /tmp/requirements.txt \
-    && uv pip install \
-       --target "${LAMBDA_TASK_ROOT}" \
-       -r /tmp/requirements.txt
-
-COPY graph.py ${LAMBDA_TASK_ROOT}/
-
-CMD ["graph.lambda_handler"]
+CMD ["sh", "-c", "uv run --no-sync uvicorn api:app --host 0.0.0.0 --port ${PORT:-10000}"]
