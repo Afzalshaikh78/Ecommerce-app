@@ -1,0 +1,18 @@
+
+FROM public.ecr.aws/lambda/python:3.12
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR ${LAMBDA_TASK_ROOT}
+
+COPY pyproject.toml uv.lock ./
+
+RUN uv export --frozen --no-dev --no-emit-project \
+    --format requirements-txt -o /tmp/requirements.txt \
+    && uv pip install \
+       --target "${LAMBDA_TASK_ROOT}" \
+       -r /tmp/requirements.txt
+
+COPY graph.py ${LAMBDA_TASK_ROOT}/
+
+CMD ["graph.lambda_handler"]

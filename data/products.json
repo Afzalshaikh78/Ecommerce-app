@@ -1,0 +1,98 @@
+[
+  {
+    "product_id": "01",
+    "name": "Classic Cotton T-Shirt",
+    "category": "Clothing",
+    "price": 19.99,
+    "description": "A soft, breathable everyday tee with a regular fit.",
+    "inventory": 150
+  },
+  {
+    "product_id": "02",
+    "name": "Slim Fit Jeans",
+    "category": "Clothing",
+    "price": 49.99,
+    "description": "Stretch denim with a modern slim leg.",
+    "inventory": 85
+  },
+  {
+    "product_id": "03",
+    "name": "Fleece Hooded Sweatshirt",
+    "category": "Clothing",
+    "price": 39.99,
+    "description": "Cozy brushed-fleece hoodie with a kangaroo pocket.",
+    "inventory": 200
+  },
+  {
+    "product_id": "04",
+    "name": "Wool Blend Overcoat",
+    "category": "Clothing",
+    "price": 179.99,
+    "description": "A tailored knee-length overcoat for suits and knitwear.",
+    "inventory": 15
+  },
+  {
+    "product_id": "05",
+    "name": "Cloud Runner Running Shoes",
+    "category": "Shoes",
+    "price": 89.99,
+    "description": "Lightweight cushioned running shoes with responsive foam.",
+    "inventory": 42
+  },
+  {
+    "product_id": "06",
+    "name": "Leather Chelsea Boots",
+    "category": "Shoes",
+    "price": 129.99,
+    "description": "Timeless slip-on Chelsea boots with elastic side panels.",
+    "inventory": 28
+  },
+  {
+    "product_id": "07",
+    "name": "Canvas Low-Top Sneakers",
+    "category": "Shoes",
+    "price": 44.99,
+    "description": "Classic lace-up canvas sneakers that pair with anything.",
+    "inventory": 120
+  },
+  {
+    "product_id": "08",
+    "name": "Comfort Footbed Sandals",
+    "category": "Shoes",
+    "price": 49.99,
+    "description": "Two-strap sandals with a contoured cork footbed.",
+    "inventory": 67
+  },
+  {
+    "product_id": "09",
+    "name": "Adjustable Baseball Cap",
+    "category": "Accessories",
+    "price": 17.99,
+    "description": "A six-panel cap with a curved brim and strap-back.",
+    "inventory": 300
+  },
+  {
+    "product_id": "10",
+    "name": "Full-Grain Leather Belt",
+    "category": "Accessories",
+    "price": 29.99,
+    "description": "A classic leather belt with a brushed metal buckle.",
+    "inventory": 95
+  },
+  {
+    "product_id": "11",
+    "name": "Aviator Sunglasses",
+    "category": "Accessories",
+    "price": 59.99,
+    "description": "Polarized metal-frame aviators with UV400 protection.",
+    "inventory": 180
+  },
+  {
+    "product_id": "12",
+    "name": "Canvas Tote Bag",
+    "category": "Accessories",
+    "price": 34.99,
+    "description": "A roomy everyday tote with an interior zip pocket.",
+    "inventory": 110
+  }
+]

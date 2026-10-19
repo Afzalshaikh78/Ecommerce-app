@@ -1,0 +1,7 @@
+[
+  {"query": "Lightweight running shoes with responsive foam", "expected_product_ids": ["05"]},
+  {"query": "Stretch denim jeans with a modern slim leg", "expected_product_ids": ["02"]},
+  {"query": "Polarized aviator sunglasses with UV400 protection", "expected_product_ids": ["11"]},
+  {"query": "Roomy canvas tote bag with an interior zip pocket", "expected_product_ids": ["12"]},
+  {"query": "Cozy brushed fleece hoodie with kangaroo pocket", "expected_product_ids": ["03"]}
+]
