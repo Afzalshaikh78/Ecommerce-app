@@ -1,4 +1,5 @@
 import os
+import logging
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,6 +9,7 @@ from graph import handle_message
 from ui.catalog import FEATURED_PRODUCTS, PRODUCTS, all_categories
 
 app = FastAPI(title="AnyCart API", version="1.0.0")
+logger = logging.getLogger(__name__)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=os.getenv("CORS_ORIGINS", "http://localhost:5173").split(","),
@@ -39,8 +41,9 @@ def catalog():
 def chat(request: ChatRequest):
     try:
         result = handle_message(request.message)
-    except Exception as exc:
-        raise HTTPException(status_code=502, detail="The shopping assistant is temporarily unavailable.") from exc
+    except Exception:
+        logger.exception("Chat request failed")
+        raise HTTPException(status_code=502, detail="The shopping assistant is temporarily unavailable.") from None
     if "error" in result:
         raise HTTPException(status_code=400, detail=result["error"])
     return result
